@@ -1,0 +1,48 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: despensa_web
+    ports:
+      - "8090:80"
+    environment:
+      DB_HOST: mysql
+      DB_NAME: despensa_db
+      DB_USER: despensa_user
+      DB_PASS: despensa_pass
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: despensa_mysql
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Jp12342231!
+      MYSQL_DATABASE: despensa_db
+      MYSQL_USER: despensa_user
+      MYSQL_PASSWORD: despensa_pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: despensa_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "8091:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: Jp12342231!
+
+volumes:
+  mysql_data:

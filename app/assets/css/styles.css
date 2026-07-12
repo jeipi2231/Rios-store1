@@ -1,0 +1,289 @@
+:root {
+  --bs-primary: #111111;
+  --bs-primary-rgb: 17, 17, 17;
+  --bs-secondary: #5f5f5f;
+  --bs-secondary-rgb: 95, 95, 95;
+  --bs-success: #111111;
+  --bs-success-rgb: 17, 17, 17;
+  --bs-danger: #262626;
+  --bs-danger-rgb: 38, 38, 38;
+  --bs-info: #404040;
+  --bs-info-rgb: 64, 64, 64;
+}
+
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #ececec 100%);
+  color: #111111;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: 260px;
+  background: #111111;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  padding: 0.25rem 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 0.75rem;
+}
+
+.brand-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar-link {
+  color: #d4d4d4;
+  text-decoration: none;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: #ffffff;
+  color: #111111;
+}
+
+.sidebar-user {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.75rem 0.5rem 0.3rem;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-main {
+  padding-top: 1rem;
+}
+
+.app-topbar {
+  padding: 0.75rem 1rem 0;
+}
+
+.card {
+  border: 1px solid #d4d4d4;
+  border-radius: 0.9rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.05) !important;
+}
+
+.btn-primary,
+.btn-success,
+.btn-dark {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-dark:hover,
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-danger:hover {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-danger {
+  color: #111111;
+  border-color: #111111;
+}
+
+.text-primary,
+.text-success,
+.text-danger {
+  color: #111111 !important;
+}
+
+.badge.text-bg-success,
+.badge.text-bg-danger,
+.badge.text-bg-primary,
+.badge.text-bg-secondary,
+.badge.text-bg-dark {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.alert-success,
+.alert-danger {
+  border-color: #111111;
+  background: #f7f7f7;
+  color: #111111;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+table td,
+table th {
+  vertical-align: middle;
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .app-sidebar {
+    display: none;
+  }
+
+  .app-main {
+    padding-top: 0.75rem;
+  }
+
+  .btn {
+    min-height: 42px;
+  }
+
+  .form-control,
+  .form-select {
+    min-height: 42px;
+  }
+}
+
+@media (min-width: 769px) {
+  .app-topbar {
+    display: none;
+  }
+}
+
+.client-finder {
+  border: 1px dashed #8b8b8b;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f8f8;
+}
+
+.client-result-item {
+  cursor: pointer;
+}
+
+.client-result-item strong {
+  color: #111111;
+}
+
+/* Product Image Preview Popup */
+.product-name-wrapper {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.product-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-thumb.placeholder {
+  color: #6c757d;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.product-name-link {
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted #111111;
+  color: #111111;
+  transition: all 0.2s ease;
+}
+
+.product-name-wrapper:hover .product-name-link {
+  color: #444444;
+  border-bottom-color: #444444;
+}
+
+.product-image-preview {
+  display: none;
+  position: fixed;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  z-index: 2000;
+  width: 220px;
+  height: 220px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-image-preview.product-image-placeholder {
+  background: #e9ecef;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .product-image-preview {
+    display: none !important;
+  }
+}
+
+.floating-product-preview {
+  position: fixed;
+  z-index: 3000;
+  pointer-events: none;
+}
