@@ -1,0 +1,68 @@
+========================================
+  INSTALACION DEL SISTEMA DE GESTION
+========================================
+
+PASO 1: Instalar XAMPP
+-----------------------
+- Descarga XAMPP desde: https://www.apachefriends.org/
+- Instala XAMPP en tu PC
+- Abre el Panel de Control de XAMPP
+- Inicia Apache y MySQL (haz clic en "Start")
+
+PASO 2: Preparar la carpeta
+---------------------------
+- Ejecuta el archivo "renombrar.bat" (doble clic)
+- Esto cambiara el nombre de la carpeta a "sistema" (sin espacios)
+- Copia la nueva carpeta "sistema" a:
+  C:\xampp\htdocs\
+- Deberia quedar asi: C:\xampp\htdocs\sistema\
+
+PASO 3: Crear carpetas necesarias
+---------------------------------
+- Ejecuta el archivo "install.bat" (doble clic)
+- Esto crea las carpetas necesarias automaticamente
+
+PASO 4: Configurar la base de datos
+-----------------------------------
+- Abre tu navegador web
+- Ve a: http://localhost/phpmyadmin
+- Haz clic en "Nueva" (o "New" en ingles)
+- Nombre de la base de datos: despensa_db
+- Codificacion: utf8mb4_general_ci
+- Haz clic en "Crear"
+
+PASO 5: Importar los datos
+--------------------------
+- En phpMyAdmin, selecciona la base "despensa_db"
+- Ve a la pestaña "Importar" (o "Import")
+- Haz clic en "Seleccionar archivo"
+- Busca y selecciona: db\init.sql
+- Desplazate hacia abajo y haz clic en "Continuar"
+- Espera a que termine la importacion
+
+PASO 6: Probar el sistema
+------------------------
+- Abre tu navegador web
+- Ve a: http://localhost/sistema/index.php
+- Deberia aparecer la pagina de login
+
+USUARIOS INICIALES:
+------------------
+Administrador:
+- Usuario: admin
+- Contrasena: 12342231!
+
+Cajero:
+- Usuario: cajero
+- Contrasena: 12342231
+
+========================================
+  ¡SISTEMA LISTO PARA USAR!
+========================================
+
+Si tienes problemas:
+1. Asegurate de que Apache y MySQL esten ejecutandose en XAMPP
+2. Verifica que la carpeta este en C:\xampp\htdocs\
+3. Revisa que la base de datos se creo correctamente
+
+Para soporte, contacta al desarrollador.
